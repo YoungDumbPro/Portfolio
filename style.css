@@ -585,6 +585,10 @@ body {
   .banner {
     height: 400px; /* Was 600px */
   }
+    .banner p {
+    display: none; /* Hide the quote on mobile for simplicity */
+  }
+  
 
   /* 5. IMPORTANT: Adjust animation for the new banner height */
   /* We must create new keyframes for mobile */
@@ -627,3 +631,4 @@ body {
     padding: 40px 20px;
   }
 }
+
