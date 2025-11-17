@@ -585,8 +585,8 @@ body {
   .banner {
     height: 400px; /* Was 600px */
 
-  .banner p {
-    display: none; /* Hide the quote on mobile for simplicity */
+  .banner-text p {
+    display: none;
   }
 
   /* 5. IMPORTANT: Adjust animation for the new banner height */
