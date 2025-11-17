@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --color-primary-dark: #14213D;
   --color-primary-gold: #ffd60a;
@@ -631,3 +632,639 @@ body {
   }
 }
 }
+=======
+:root {
+  --color-primary-dark: #14213D;
+  --color-primary-gold: #ffd60a;
+  --color-primary-gold-darker: #ffc300;
+  --color-text-light: #E5E5E5;
+  --color-bg-light: #f4f4f4;
+  --color-bg-white: #ffffff;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  gap: 20px;
+  background-color: #14213D;
+  color: #ffd60a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.header:hover {
+  background-color: #1f2a4d;
+}
+
+.header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #ffc300;
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.header img:hover {
+  transform: scale(1.05);
+}
+
+.subtext h1 {
+  font-size: 2.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtext p {
+  font-size: 1.2em;
+  font-style: italic;
+  color: #E5E5E5;
+  margin: 5px 0 0;
+}
+
+.navigation {
+  background-color: var(--color-primary-dark);
+  padding: 0 15px; /* Padding is now on the nav, not the links */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navigation ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  display: flex; /* Lines up the <li> items */
+  justify-content: flex-start; /* Or 'center' if you prefer */
+}
+.navigation li {
+  margin: 0; /* We handle spacing in the <a> now */
+}
+
+/* --- UPDATE YOUR .navigation a RULE --- */
+.navigation a {
+  display: block; /* Make the link fill the <li> */
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: 1.1em;
+  position: relative;
+  
+  /* Use padding for spacing, not margin */
+  padding: 15px 20px; /* 15px top/bottom, 20px left/right */
+  
+  transition: color 0.3s ease;
+  
+  /* We remove margin and padding-bottom from the old rule */
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.1em;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #ffd60a;
+}
+
+.navigation a::after {
+  content: ''; /* Required for a pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%; /* Starts hidden */
+  height: 2px;
+  background-color: #ffd60a;
+  transition: width 0.3s ease; /* Animate the width */
+}
+
+
+.navigation a:hover::after {
+  width: 100%;
+}
+
+.navigation a:hover {
+  color: #ffd60a;
+}
+
+.banner {
+  background: linear-gradient(to bottom, #003566, #023e8a);
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+.banner h2 {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+.banner p {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5em;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+
+
+
+/*
+ * NEW ANIMATION: FLOATING SHAPES
+ */
+
+.banner {
+  /* We keep your original styles, this is perfect */
+  background: linear-gradient(to bottom, #003566, #023e8a);
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  /* Add this to prevent any horizontal scrollbar */
+  width: 100%;
+}
+
+/* This is the new keyframe for the floating effect */
+@keyframes floatUp {
+  0% {
+    /* Start at the bottom, faded out, and not rotated */
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    /* Fade in quickly */
+    opacity: 1;
+  }
+  100% {
+    /* Move 700px up (past the top of the 600px banner)
+       and rotate 360 degrees. Then fade out. */
+    transform: translateY(-700px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* This is the container for the shapes */
+.shapes-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* This is the base style for all shapes */
+.shape {
+  position: absolute;
+  list-style: none;
+  
+  /* Start all shapes at the bottom of the banner */
+  bottom: -150px; 
+  
+  /* Use your gold theme color, but with transparency */
+  background-color: rgba(255, 214, 10, 0.15);
+  border: 1px solid rgba(255, 214, 10, 0.3);
+  
+  /* Apply the animation */
+  animation-name: floatUp;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* * Now we create variations for each shape.
+ * This is what makes the animation look random and natural.
+ * We vary:
+ * 1. 'left' (horizontal position)
+ * 2. 'width'/'height' (size)
+ * 3. 'animation-duration' (speed)
+ * 4. 'animation-delay' (when it starts)
+*/
+
+.shape-1 {
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  animation-duration: 15s;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  left: 20%;
+  width: 30px;
+  height: 30px;
+  animation-duration: 12s;
+  animation-delay: 1.5s;
+  border-radius: 50%; /* Make this one a circle */
+}
+
+.shape-3 {
+  left: 35%;
+  width: 100px;
+  height: 100px;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+
+.shape-4 {
+  left: 55%;
+  width: 50px;
+  height: 50px;
+  animation-duration: 14s;
+  animation-delay: 0.5s;
+}
+
+.shape-5 {
+  left: 75%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 10s;
+  animation-delay: 5s;
+  border-radius: 50%; /* Another circle */
+}
+
+.shape-6 {
+  left: 85%;
+  width: 120px;
+  height: 120px;
+  animation-duration: 20s;
+  animation-delay: 2s;
+}
+
+/* About Me Section */
+.about {
+  background-color: #003566;
+  
+  /* I brought back the responsive padding */
+  padding: 50px 15%;
+  
+  /* This box-shadow and margin-top create your overlap effect */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+  
+  
+  /* This makes sure the section overlaps the banner */
+  position: relative;
+  z-index: 10;
+  
+  /* This will center your h2 */
+  text-align: left;
+}
+
+.about h2 {   
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  background-color: #14213D;
+  color: #ffd60a;
+  
+  /* --- IMPROVEMENTS --- */
+  /* This makes the background only cover the text */
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px; /* Makes it a nice pill shape */
+  margin-bottom: 30px; /* Adds space below the heading */
+}
+
+.about-content {
+  max-width: 800px;
+  
+  /* --- CORRECTION --- */
+  /* 'margin: 0 auto;' is the correct way to center a block */
+  margin: 0 auto; 
+  
+  /* 'text-align: left' is better for readable paragraphs */
+  text-align: left;
+
+}
+
+.about-content p {
+  font-size: 1.15em;
+  line-height: 1.7;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.about-content p>strong {
+  /* This is a great addition! */
+  color: #ffd60a;
+}
+/* Projects Section */
+.projects {
+  /* Uses the light gray body background to contrast the dark About section */
+  background-color: #f4f4f4;
+  padding: 50px 10%; /* A little less padding on the sides for cards */
+  text-align: center;
+}
+
+.projects h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: #14213D; /* Dark blue title */
+  margin-bottom: 40px;
+}
+
+/* This creates the responsive grid */
+.project-grid {
+  display: grid;
+  /* This rule is magic: 
+     - It creates columns that are at least 300px wide.
+     - 'auto-fit' tells it to fit as many columns as it can.
+     - '1fr' means "make them all equal width".
+     On a large screen, you'll get 3 columns. On a tablet, 2. On mobile, 1.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 10px; /* Matches your header's border-radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden; /* Keeps the image corners rounded */
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Lifts the card up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Prevents your images from stretching */
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #14213D;
+  margin: 0 0 10px 0;
+}
+
+.project-description {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Tech stack "pills" */
+.project-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-wrap: wrap; /* Allows pills to wrap to the next line */
+}
+
+.project-tech li {
+  font-size: 0.8em;
+  font-weight: 600;
+  background-color: #E5E5E5; /* Light gray pill */
+  color: #555;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin: 0 5px 5px 0;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+  text-align: center;
+  border: 2px solid #ffd60a;
+  
+  /* Primary Button (Yellow) */
+  background-color: #ffd60a;
+  color: #14213D;
+}
+
+.btn:hover {
+  background-color: #ffc300; /* Darker yellow */
+  border-color: #ffc300;
+}
+
+/* Secondary Button (Outline) */
+.btn.btn-secondary {
+  background-color: transparent;
+  color: #14213D;
+  border: 2px solid #14213D;
+}
+
+.btn.btn-secondary:hover {
+  background-color: #14213D;
+  color: #ffffff;
+}
+/* Contact Section */
+.contact {
+  background-color: #ffffff; /* A clean white background */
+  padding: 50px 10%;
+  text-align: center;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05); /* Matches your About section */
+  position: relative; /* For the shadow */
+}
+
+.contact h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: #14213D;
+  margin-bottom: 15px;
+}
+
+.contact-intro {
+  font-size: 1.15em;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto 30px auto; /* Centers the paragraph */
+  line-height: 1.7;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto; /* Centers the form */
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #14213D;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #E5E5E5;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  box-sizing: border-box; /* IMPORTANT: Includes padding in the width */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #ffd60a; /* Highlights with your theme color */
+  box-shadow: 0 0 8px rgba(255, 214, 10, 0.3);
+}
+
+.contact-form .btn {
+  /* This reuses your .btn style from the projects section */
+  display: block; /* Makes the button full-width */
+  width: 100%;
+  font-size: 1.1em;
+  padding: 15px;
+  cursor: pointer;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #14213D;
+  color: #E5E5E5;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Add this entire block to the end of your CSS file */
+
+@media (max-width: 768px) {
+
+  /* 1. Make the header stack vertically */
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  /* 2. Reduce font sizes for mobile header */
+  .subtext h1 {
+    font-size: 1.8em; /* Was 2.5em */
+  }
+
+  .subtext p {
+    font-size: 1em; /* Was 1.2em */
+  }
+
+  /* 3. Stack the navigation links */
+  .navigation {
+    padding: 10px 0;
+  }
+  
+  .navigation a {
+    display: block; /* Makes each link take its own line */
+    text-align: center;
+    margin: 8px 0; /* Adds vertical spacing */
+    padding-bottom: 0; /* Remove padding for... */
+  }
+  /* (We'll add a better hover effect in the next section) */
+
+
+  /* 4. Make the banner shorter */
+  .banner {
+    height: 400px; /* Was 600px */
+  }
+    .banner p {
+    display: none; /* Hide the quote on mobile for simplicity */
+  }
+  
+
+  /* 5. IMPORTANT: Adjust animation for the new banner height */
+  /* We must create new keyframes for mobile */
+  @keyframes bounce-mobile {
+    0%, 100% {
+      top: 255px; /* (400px height - 150px ball) - 10px road -~5px squash */
+      transform: scaleX(1.2) scaleY(0.8);
+      animation-timing-function: ease-in;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); 
+    }
+    25% {
+      transform: scaleX(0.9) scaleY(1.1);
+    }
+    50% {
+      top: 5px;
+      transform: scaleX(1) scaleY(1);
+      animation-timing-function: ease-out;
+      /* Adjust shadow distance to match new height */
+      box-shadow: 0 250px 35px rgba(0, 0, 0, 0.2); 
+    }
+    75% {
+      transform: scaleX(0.9) scaleY(1.1);
+    }
+  }
+
+  /* Apply the new mobile animation */
+  .ball {
+    animation: bounce-mobile 2s infinite ease-in-out;
+  }
+
+  .ball2 {
+    animation: bounce-mobile 2.1s infinite ease-in-out;
+  }
+
+  /* 6. Reduce padding on sections */
+  .about,
+  .projects,
+  .contact {
+    /* Uses smaller side padding on mobile */
+    padding: 40px 20px;
+  }
+}
+
+>>>>>>> 67fd4fc454382924db2ad8d548adf197eaf5bc25
