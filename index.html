@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nischal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <img src="images/male.png" alt="Nischal's Photo" class="profile" />
+    <div class="subtext">
+      <h1>Hi, I'm Nischal — Developer & Creative Thinker</h1>
+      <p>Blending logic, empathy, and playful design to build meaningful experiences.</p>
+    </div>
+  </header>
+
+  <!-- Navbar Section -->
+ <nav class="navigation">
+  <ul>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- Banner Section -->
+ <div class="banner">
+    <div class="shapes-container">
+      <div class="banner-text">
+        <h2>Fundamentals are the building blocks of fun.</h2>
+        <p>~ Mikhail</p></div>
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+      <div class="shape shape-6"></div>
+    </div>
+  </div>
+  <!-- About Me Section -->
+ <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        Hello! I'm Nischal, a Bachelor of Computer Applications (BCA) student 
+        at Manipal University. I'm a developer and creative thinker with a 
+        growing passion for web development and software technologies.
+      </p>
+      <p>
+        I'm currently building a strong foundation in 
+        <strong>HTML, CSS, JavaScript, Java, PHP, WordPress, and MySQL.</strong> 
+        I'm driven by a deep curiosity and a constant desire to learn, 
+        improve, and explore new areas in tech, blending solid logic with 
+        a touch of playful design.
+      </p>
+      <p>
+        Beyond academics, I enjoy immersing myself in video games like 
+        Valorant, which sharpen my strategic thinking and problem-solving skills. 
+        While I’m still early in my journey, I’m committed to continuous 
+        growth and excited to turn my evolving skills into impactful, 
+        real-world projects.
+      </p>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <h2>My Projects</h2>
+    
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="images\ColorFlipper.png" alt="Screenshot of ColorFlipper" class="project-image">
+        <div class="project-info">
+          <h3 class="project-title">RandomColorFlip</h3>
+          <p class="project-description">
+            The "Random Color Flipper" is a simple web application built with HTML, CSS, and JavaScript. 
+            When a user clicks the button, the JavaScript generates a random hex code, updates the page's background to that color, 
+            and displays the corresponding hex value on the screen.
+          </p>
+          
+          <ul class="project-tech">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+          
+          <div class="project-links">
+            <a href="https://github.com/YoungDumbPro/RandomColorFlip" class="btn" target="_blank">View Code</a>
+            <a href="https://youngdumbpro.github.io/RandomColorFlip/" class="btn btn-secondary" target="_blank">Live Demo</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <img src="images/project-placeholder.png" alt="Screenshot of My Project" class="project-image">
+        <div class="project-info">
+          <h3 class="project-title">Another Project Name</h3>
+          <p class="project-description">
+            This project was built using WordPress and custom PHP. 
+            It features a custom theme and a blog.
+          </p>
+          
+          <ul class="project-tech">
+            <li>WordPress</li>
+            <li>PHP</li>
+            <li>MySQL</li>
+          </ul>
+          
+          <div class="project-links">
+            <a href="#" class="btn" target="_blank">View Code</a>
+            <a href="#" class="btn btn-secondary" target="_blank">Live Demo</a>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+  </section>
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p class="contact-intro">
+      I'm always open to discussing new projects or opportunities. 
+      Feel free to reach out!
+    </p>
+    
+    <form class="contact-form" action="#" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Nischal. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
